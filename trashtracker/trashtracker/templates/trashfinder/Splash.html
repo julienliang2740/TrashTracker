@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TrashTracker</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+        <link rel="shortcut icon" type="image/jpg" href="{% static 'trashfinder/Favicon.png' %}"/>
+        <link href="{% static 'trashfinder/Splashstyle.css' %}" rel="stylesheet" type="text/css">
+
+		<script>
+            function progressBar() {
+                const images = ["{% static 'trashfinder/2.png'%}", "{% static 'trashfinder/3.png'%}", "{% static 'trashfinder/4.png'%}", "{% static 'trashfinder/5.png'%}", "{% static 'trashfinder/6.png'%}"];
+                var i = 0;
+                var move = setInterval(() => {
+                    if (i != 5) {
+                        document.getElementById("progress-bar").src = images[i];
+                        i++;
+                    }
+                    else {
+                        clearInterval(move);
+                        var y = document.getElementById("twinkle")
+                        y.play();
+                        
+                        fadeOut();
+                    }
+                }, 400);
+            }
+
+            function fadeOut() {
+                var em = document.getElementById("progress-bar");
+                var opacity = 1;
+
+                var fadeout = setInterval(() => {
+                    if (opacity > 0) {
+                        opacity -= 0.1;
+                        document.getElementById("progress-bar").style.opacity = opacity;
+                    }
+                    else {
+                        clearInterval(fadeout);
+                        var page = document.getElementById("page");
+                        page.remove();
+                    }
+                }, 10);
+            }
+
+            function elementAppear() {
+                setTimeout(function(){ 
+                    var opacity = 0;
+                    var fadein = setInterval(() => {
+                        if (opacity < 1) {
+                            opacity += 0.1;
+                            document.getElementById("home").style.opacity = opacity;
+                        }
+                        else {
+                            clearInterval(fadein);
+                        }
+                    }, 10); 
+                }, 3000);
+            }
+
+            function playsound(){
+                var x = document.getElementById("button");
+                x.play()
+            }
+
+			function pickTrash() {
+				alert("Good job!");
+			}
+		</script>
+	</head>
+
+	<body onLoad="progressBar(); elementAppear()">
+        <audio id = "button">
+            <source src="{% static 'trashfinder/buttonsound.mp3'%}" type="audio/mpeg">
+        </audio>
+
+        <audio id = "twinkle">
+          <source src="{% static 'trashfinder/twinklesound.mp3'%}" type="audio/mpeg">
+        </audio>
+
+        <div id = "page">
+            <img id = "progress-bar" src = "{% static 'trashfinder/1.png'%}">
+        </div>
+
+        <div id = "home" style = "visibility: visible; opacity: 0;">
+            <div class="fade-in">
+                <div class="logo">
+                    <img id="logo-image" src="{% static 'trashfinder/Trash_Logo.png'%}" alt="Trash Tracker">
+                </div>
+                
+                <div class="menu">
+                    <button onclick="playsound(); location.href='map'">Map</button>
+                </div>
+            </div>
+
+            <img id="bottom-banner" src="{% static 'trashfinder/Bottom_Banner.png'%}">
+        </div>
+	</body>
+</html>

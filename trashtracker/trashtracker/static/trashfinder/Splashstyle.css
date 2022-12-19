@@ -1,0 +1,190 @@
+body {
+	background-color: #f5f5ef;
+}
+
+#home {
+  opacity: 0;
+}
+
+#page {
+  display: block;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+}
+
+#progress-bar {
+	width: 100px;
+	z-index: 100;
+	position: absolute;
+  left: 45%;
+  top: 40%;
+}
+
+.menu button {
+	display: block;	
+	margin-top: 20px;
+	margin-right: auto;
+	margin-bottom: 20px;
+	margin-left: auto;
+    
+  border: 3px solid #0976b2; 
+	background-color: white;
+	padding: 14px 28px;
+	font-size: 30px;
+	cursor: pointer;
+	color: #0976b2;
+	border-radius: 4px;
+	
+	width: 20%;
+}
+
+.menu button:hover {
+  background-color: #0976b2;
+  color: white;
+}
+
+.logo {
+  display: block;
+  margin-top: 5%;
+  margin-right: auto;
+  margin-bottom: 40px;
+  margin-left: auto;
+  width: 40%;
+}
+
+.fade-in {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;  
+  animation: fadeIn ease 5s;
+  -webkit-animation: fadeIn ease 5s;
+  -moz-animation: fadeIn ease 5s;
+  -o-animation: fadeIn ease 5s;
+  -ms-animation: fadeIn ease 5s;
+}
+
+#logo-image {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: auto;
+}
+
+#bottom-banner {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: -1;
+  animation: fadeIn ease 5s;
+  -webkit-animation: fadeIn ease 5s;
+  -moz-animation: fadeIn ease 5s;
+  -o-animation: fadeIn ease 5s;
+  -ms-animation: fadeIn ease 5s;
+}
+
+@media screen and (max-width: 1100px) {
+	.logo {
+	  width: 80%;
+	}
+	
+	.menu button {
+		width: 40%;
+	}
+}
+
+@media screen and (max-width: 850px) {
+  #bottom-banner {
+    width: 200%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  #bottom-banner {
+    width: 250%;
+  }
+
+  #progress-bar {
+    left: 40%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  #bottom-banner {
+    width: 300%;
+  }
+
+  .logo {
+    margin-top: 20%
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #bottom-banner {
+    width: 400%;
+  }
+
+  #progress-bar {
+    left: 35%
+  }
+
+  .logo {
+    margin-top: 25%
+  }
+}
+
+@media screen and (max-width: 350px) {
+  #bottom-banner {
+    width: 700%;
+  }
+
+  .logo {
+    margin-top: 30%
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+}
+}
